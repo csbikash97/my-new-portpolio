@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aarav Sharma Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="gridlines"></div><div class="beam"></div>
+  <div class="pulse"></div><div class="pulse p2"></div>
+  <div id="embers"></div>
+  <div class="vig"></div>
+</div>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#home"><i></i>Aarav Sharma</a>
+    <nav aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch between dark and light" title="Switch between dark and light">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section class="view hero" id="view-home" data-view="home">
+    <div class="hero-grid">
+      <div>
+        <span class="status"><b></b>Taking on projects from January 2027</span>
+        <h1>Aarav Sharma,<br>I build <span class="role" id="role">fast websites</span></h1>
+        <p class="lede">Front-end developer and interface designer in Patna, Bihar. I turn rough ideas into clear, quick, accessible products for schools, local shops and small startups.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">See my work →</a>
+          <a class="btn" href="#contact">Start a project</a>
+        </div>
+        <div class="playground">
+          <div>
+            <div class="mono">Try it</div>
+            <div style="font-weight:500">Pick an accent colour for this site</div>
+          </div>
+          <div class="swatches" id="swatches" role="group" aria-label="Accent colour"></div>
+        </div>
+      </div>
+      <div class="portrait" aria-hidden="false">
+        <div class="orbit"></div>
+        <div class="art" id="heroArt"></div>
+        <span class="fchip fc1"><b>&lt;/&gt;</b> clean code</span>
+        <span class="fchip fc2"><b>98</b> Lighthouse</span>
+        <span class="fchip fc3"><b>5 yrs</b> building the web</span>
+      </div>
+    </div>
+
+    <div class="sec-head">
+      <h2>Recent work</h2>
+      <a class="link-arrow" href="#work">All projects</a>
+    </div>
+    <div class="grid" id="featured"></div>
+  </section>
+
+  <!-- WORK -->
+  <section class="view" id="view-work" data-view="work" hidden>
+    <div class="mono">Selected projects, 2024 to 2026</div>
+    <h1 class="page-title">Work</h1>
+    <div class="chips" id="filters" role="group" aria-label="Filter projects"></div>
+    <div class="grid" id="projects"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about" data-view="about" hidden>
+    <div class="mono">About</div>
+    <h1 class="page-title">Small team energy, careful details.</h1>
+    <div class="about-grid">
+      <div>
+        <div class="portrait small"><div class="art" id="aboutArt"></div></div>
+        <div class="prose">
+          <p>I started by fixing my family's shop website on a slow 4G connection, and I still design for that connection first.</p>
+          <p>Five years later I work across design and code: wireframes in the morning, components in the afternoon, and a lot of time spent making pages load in under two seconds.</p>
+          <p>I like projects where a clear interface saves people real time, such as fee payments, appointment booking and inventory screens.</p>
+        </div>
+        <ul class="timeline" aria-label="Experience">
+          <li><h3>Freelance front-end developer</h3><p>2024 to now. Eleven client sites and two web apps, mostly for education and retail.</p></li>
+          <li><h3>UI developer, Gangetic Labs</h3><p>2022 to 2024. Built a shared component library used by four product teams.</p></li>
+          <li><h3>B.Tech, Computer Science</h3><p>2018 to 2022. Final project: an offline-first attendance app.</p></li>
+        </ul>
+      </div>
+      <div>
+        <h2 style="font-size:1.6rem;margin-bottom:1rem">Skills</h2>
+        <p class="mono" style="margin-bottom:.75rem">Tap a skill to see how I use it</p>
+        <div class="skills" id="skills"></div>
+        <div class="skill-detail" id="skillDetail" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact" data-view="contact" hidden>
+    <div class="mono">Contact</div>
+    <h1 class="page-title">Let's make something.</h1>
+    <div class="contact-grid">
+      <div>
+        <p class="lede" style="margin-top:0">Tell me what you are building, who it is for and when you need it. I reply within two working days.</p>
+        <div class="mail-row">
+          <code id="mail">hello@aaravsharma.example</code>
+          <button class="btn" type="button" id="copyMail">Copy</button>
+        </div>
+        <p class="mono" style="margin-top:1.5rem">Based in Patna, IST (UTC+5:30)</p>
+      </div>
+      <div>
+        <form id="form" novalidate>
+          <label for="name">Your name
+            <input id="name" name="name" autocomplete="name" placeholder="Priya Kumari">
+            <span class="err" id="e-name"></span>
+          </label>
+          <label for="email">Email
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="priya@school.example">
+            <span class="err" id="e-email"></span>
+          </label>
+          <label for="kind">Project type
+            <select id="kind" name="kind">
+              <option>New website</option>
+              <option>Web app</option>
+              <option>Redesign</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label for="msg">Message
+            <textarea id="msg" name="msg" placeholder="We need a fee payment page for our school..."></textarea>
+            <span class="err" id="e-msg"></span>
+          </label>
+          <button class="btn primary" type="submit">Write my message</button>
+        </form>
+        <div class="result" id="result" hidden>
+          <strong>Your message is ready.</strong>
+          <pre id="out"></pre>
+          <p style="color:var(--muted);font-size:.9rem">This page cannot send email. Copy the text and send it to the address on the left.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <button class="btn primary" type="button" id="copyMsg">Copy message</button>
+            <button class="btn" type="button" id="editMsg">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Aarav Sharma</span>
+    <span>Built with plain HTML, CSS and JavaScript</span>
+  </footer>
+</main>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="modal-wrap">
+    <button class="icon-btn close" id="closeModal" type="button" aria-label="Close project">✕</button>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" id="modal"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>
